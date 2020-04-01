@@ -30,7 +30,17 @@ module.exports = {
 }
 ```
 
-If you are using `eslint` you will need to put `/* globals React */` in all of your components. If you want to disable `eslint`, create an empty `.eslintrc` file in root of your file and wont need a globals comment. If you want to disable only this rule of eslint, use this config in your `.eslintrc`:
+## Common error
+
+If you are getting: 
+```
+error  'React' must be in scope when using JSX
+```
+
+You need to create an empty `.eslintrc` in root of your folder. This error occurs from eslint.
+
+If you are using eslint in your project, just update this key to your config:
+
 ```javascript
 {
   "rules": {
