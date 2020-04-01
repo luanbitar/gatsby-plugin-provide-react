@@ -1,10 +1,11 @@
-exports.onCreateWebpackConfig = ({ actions, plugins }) => {
+exports.onCreateWebpackConfig = ({ actions, plugins, reporter }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      plugins.provide({
+        React: "react"
+      })
+    ]
+  })
 
-	actions.setWebpackConfig({
-		plugins: [
-			plugins.provide({
-				React: 'react'
-			})
-		]
-	})
+  reporter.info(`Provided React in all files`)
 }
